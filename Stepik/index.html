@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смольняков Данил - Прохождение курса "Введение в Linux"</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-top: 1.5rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .course-structure {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .module {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .module-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+        }
+        
+        .module-content {
+            padding: 1.5rem;
+        }
+        
+        .task {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .task:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .task-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .task-answer {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-left: 3px solid var(--secondary);
+            margin-bottom: 0.5rem;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .video-link {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 2rem 0;
+            transition: background 0.3s;
+        }
+        
+        .video-link:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .module {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Смольняков Данил Евгеньевич</h1>
+            <p>г. Москва</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Прохождение курса "Введение в Linux" на Stepik</h2>
+            <p>На этой странице представлены все этапы прохождения курса "Введение в Linux" на платформе Stepik. Здесь вы найдете подробные ответы на задания, скриншоты решений и полезные выводы по каждому модулю.</p>
+            
+            <a href="https://rutube.ru/plst/887337" class="video-link">Смотреть видео-плейлист на Rutube</a>
+        </section>
+        
+        <section id="course-modules">
+            <h2>Модули курса</h2>
+            
+            <div class="course-structure">
+                <!-- Модуль 1 -->
+                <div class="module">
+                    <div class="module-header">1. Введение</div>
+                    <div class="module-content">
+                        <div class="task">
+                            <div class="task-question">1.1 Общая информация о курсе</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Как называется этот курс?</p>
+                                <p><strong>Ответ:</strong> "Введение в Linux"</p>
+                                <p><strong>Вывод:</strong> Курс направлен на практическое освоение Linux, а система оценивания построена так, чтобы поощрять многократные попытки и обучение на ошибках.</p>
+                            </div>
+                            <img src="screenshot_1.png" alt="Решение задания 1.1" class="task-image">
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-question">1.2 Как установить Linux</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Что такое виртуальная машина?</p>
+                                <p><strong>Ответ:</strong> "Специальная программа для запуска одной ОС на другой ОС"</p>
+                                <p><strong>Вывод:</strong> Виртуальная машина (ВМ) — это программная среда, которая эмулирует работу отдельного компьютера, позволяя запускать одну операционную систему внутри другой.</p>
+                            </div>
+                            <img src="screenshot_4.png" alt="Решение задания 1.2" class="task-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Модуль 2 -->
+                <div class="module">
+                    <div class="module-header">2. Работа на сервере</div>
+                    <div class="module-content">
+                        <div class="task">
+                            <div class="task-question">2.1 Знакомство с сервером</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Для каких задач подходит удаленный сервер?</p>
+                                <p><strong>Ответ:</strong> Хранение больших объемов данных; Выполнение сложных вычислений; Хранение конфиденциальных данных; Хранение общедоступных данных</p>
+                                <p><strong>Вывод:</strong> Удаленный сервер универсален для хранения и обработки любых данных.</p>
+                            </div>
+                            <img src="screenshot_1.png" alt="Решение задания 2.1" class="task-image">
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-question">2.2 Обмен файлами</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Как скопировать папку рекурсивно?</p>
+                                <p><strong>Ответ:</strong> scp -r stepic username@server:~/</p>
+                                <p><strong>Вывод:</strong> Флаг -r обеспечивает рекурсивное копирование.</p>
+                            </div>
+                            <img src="screenshot_3.png" alt="Решение задания 2.2" class="task-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Модуль 3 -->
+                <div class="module">
+                    <div class="module-header">3. Продвинутые темы</div>
+                    <div class="module-content">
+                        <div class="task">
+                            <div class="task-question">3.1 Текстовый редактор vim</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Какие клавиши нажать для выхода?</p>
+                                <p><strong>Ответ:</strong> " : ", затем "q", затем "Enter"</p>
+                                <p><strong>Вывод:</strong> Стандартная последовательность для выхода из Vim.</p>
+                            </div>
+                            <img src="screenshot_1.png" alt="Решение задания 3.1" class="task-image">
+                        </div>
+                        
+                        <div class="task">
+                            <div class="task-question">3.2 Скрипты на bash: основы</div>
+                            <div class="task-answer">
+                                <p><strong>Вопрос:</strong> Где окажется file1.txt после выполнения скрипта?</p>
+                                <p><strong>Ответ:</strong> /home/bi/file1.txt</p>
+                                <p><strong>Вывод:</strong> Файл создается по указанному в скрипте пути.</p>
+                            </div>
+                            <img src="screenshot_4.png" alt="Решение задания 3.2" class="task-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="additional-modules">
+            <!-- Модуль 1.3 -->
+            <h2>1.3. Осваиваем Linux</h2>
+            <div class="task">
+                <div class="task-question">1.3.1 Установочные пакеты в Linux</div>
+                <div class="task-answer">
+                    <p><strong>Вопрос:</strong> Какое расширение имеют установочные пакеты в Linux (Ubuntu)?</p>
+                    <p><strong>Ответ:</strong> .deb</p>
+                    <p><strong>Вывод:</strong> .deb — стандартный формат пакетов в Debian-based дистрибутивах (включая Ubuntu). Устанавливаются с помощью dpkg или apt.</p>
+                </div>
+                <img src="screenshot_5.png" alt="Решение задания 1.3.1" class="task-image">
+            </div>
+            
+            <div class="task">
+                <div class="task-question">1.3.2 Приложение Update Manager</div>
+                <div class="task-answer">
+                    <p><strong>Вопрос:</strong> Для чего можно использовать приложение Update Manager?</p>
+                    <p><strong>Ответ:</strong> Для обновления установленных программ; Для обновления ссылок в Software Center; Для обновления всей системы до новой версии</p>
+                    <p><strong>Вывод:</strong> Update Manager (или "Менеджер обновлений") в Ubuntu предназначен для обновления уже установленного ПО (пакетов через репозитории).</p>
+                </div>
+                <img src="screenshot_6.png" alt="Решение задания 1.3.2" class="task-image">
+            </div>
+            
+            <!-- Модуль 1.4 -->
+            <h2>1.4 Terminal: основы</h2>
+            <div class="task">
+                <div class="task-question">1.4.1 Синонимы командной строки</div>
+                <div class="task-answer">
+                    <p><strong>Вопрос:</strong> Выберите все синонимы для 'командной строки'.</p>
+                    <p><strong>Ответ:</strong> Терминал; Консоль</p>
+                    <p><strong>Вывод:</strong> Терминал и Консоль — общепринятые синонимы командной строки в Linux.</p>
+                </div>
+                <img src="screenshot_7.png" alt="Решение задания 1.4.1" class="task-image">
+            </div>
+            
+            <div class="task">
+                <div class="task-question">1.4.2 Удаление директорий</div>
+                <div class="task-answer">
+                    <p><strong>Вопрос:</strong> Какая команда используется для удаления директорий?</p>
+                    <p><strong>Ответ:</strong> rm -r</p>
+                    <p><strong>Вывод:</strong> rm -r — рекурсивное удаление (файлов и папок, включая вложенные).</p>
+                </div>
+                <img src="screenshot_8.png" alt="Решение задания 1.4.2" class="task-image">
+            </div>
+            
+            <!-- Модуль 1.4 Terminal: основы -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.4 Terminal: основы</div>
+    
+    <div class="task">
+        <div class="task-question">1.4.1 Синонимы командной строки</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Выберите все синонимы для 'командной строки'.</p>
+            <p><strong>Ответ:</strong> Терминал; Консоль</p>
+            <p><strong>Вывод:</strong> Терминал и Консоль — общепринятые синонимы командной строки в Linux.</p>
+        </div>
+        <img src="screenshot_7.png" alt="Решение задания 1.4.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.4.2 Удаление директорий</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какая команда используется для удаления директорий?</p>
+            <p><strong>Ответ:</strong> rm -r</p>
+            <p><strong>Вывод:</strong> rm -r — рекурсивное удаление (файлов и папок, включая вложенные).</p>
+        </div>
+        <img src="screenshot_8.png" alt="Решение задания 1.4.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 1.5 Запуск исполняемых файлов -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.5 Запуск исполняемых файлов</div>
+    
+    <div class="task">
+        <div class="task-question">1.5.1 Запуск Firefox и exit</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что произойдет, если ввести firefox, а затем exit?</p>
+            <p><strong>Ответ:</strong> "Terminal закроется, Firefox продолжит работу"</p>
+            <p><strong>Вывод:</strong> Запуск Firefox (firefox):Браузер запустится в фоновом режиме, но терминал останется "заблокированным" (ждет завершения процесса).</p>
+        </div>
+        <img src="screenshot_9.png" alt="Решение задания 1.5.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.5.2 Запуск программы с &</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Чему эквивалентен запуск программы с &?</p>
+            <p><strong>Ответ:</strong> "Запуск, Ctrl+Z, bg"</p>
+            <p><strong>Вывод:</strong> Запуск с & сразу отправляет процесс в фон.</p>
+        </div>
+        <img src="screenshot_10.png" alt="Решение задания 1.5.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 1.6 Ввод / вывод -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.6 Ввод / вывод</div>
+    
+    <div class="task">
+        <div class="task-question">1.6.1 Поток ошибок</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Куда по умолчанию выводится поток ошибок из программы, запущенной в терминале?</p>
+            <p><strong>Ответ:</strong> "На экран"</p>
+            <p><strong>Вывод:</strong> В Linux/Unix поток ошибок (stderr) по умолчанию выводится на экран терминала.</p>
+        </div>
+        <img src="screenshot_11.png" alt="Решение задания 1.6.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.6.2 Сообщения об ошибках в конвейере</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Куда деваются сообщения об ошибках в конвейере?</p>
+            <p><strong>Ответ:</strong> "Выводятся на экран"</p>
+            <p><strong>Вывод:</strong> В конвейере (|) стандартный вывод (stdout) передаётся следующей команде.</p>
+        </div>
+        <img src="screenshot_12.png" alt="Решение задания 1.6.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 1.7 Скачивание файлов из интернета -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.7 Скачивание файлов из интернета</div>
+    
+    <div class="task">
+        <div class="task-question">1.7.1 Опция wget для отключения вывода</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какую опцию указать wget для отключения всех сообщений?</p>
+            <p><strong>Ответ:</strong> "-q или --quiet"</p>
+            <p><strong>Вывод:</strong> Опция -q (или --quiet) полностью отключает вывод сообщений wget в терминал.</p>
+        </div>
+        <img src="screenshot_13.png" alt="Решение задания 1.7.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.7.2 Скачивание файлов с wget</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие файлы останутся на диске после выполнения команды wget -r -l 1 -A jpg?</p>
+            <p><strong>Ответ:</strong> Будут скачаны jpg и html файлы, но все html будут удалены</p>
+            <p><strong>Вывод:</strong> Команда wget -r -l 1 -A jpg сначала загрузит все файлы (включая HTML и JPG), так как рекурсия (-r) и глубина (-l 1) требуют анализа страницы.</p>
+        </div>
+        <img src="screenshot_14.png" alt="Решение задания 1.7.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 1.8 Работа с архивами -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.8 Работа с архивами</div>
+    
+    <div class="task">
+        <div class="task-question">1.8.1 Сравнение gzip и zip</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Чем отличаются gzip и zip?</p>
+            <p><strong>Ответ:</strong> gzip удаляет архив после его распаковки.</p>
+            <p><strong>Вывод:</strong> gzip по умолчанию удаляет исходный файл после распаковки командой gunzip.</p>
+        </div>
+        <img src="screenshot_15.png" alt="Решение задания 1.8.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.8.2 Создание архива tar.bz2</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какой набор опций запакует файлы в my_archive.tar.bz2?</p>
+            <p><strong>Ответ:</strong> -cjf</p>
+        </div>
+        <img src="screenshot_16.png" alt="Решение задания 1.8.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 1.9 Поиск файлов и слов в файлах -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">1.9 Поиск файлов и слов в файлах</div>
+    
+    <div class="task">
+        <div class="task-question">1.9.1 Поиск файлов find</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какая маска команды find НЕ найдёт файл Alexey.jpeg?</p>
+            <p><strong>Ответ:</strong> alexey.*; *.jpg; *.?</p>
+        </div>
+        <img src="screenshot_17.png" alt="Решение задания 1.9.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">1.9.2 Поиск строк с grep</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие из предложенных строк совпадут с шаблоном "world"?</p>
+            <p><strong>Ответ:</strong> world; The beautiful-world is not enough; The beautifulworld is not enough; The world is not enough; The "world" is not enough</p>
+            <p><strong>Вывод:</strong> Команда grep "world" text.txt выведет только строки, содержащие точное сочетание символов world.</p>
+        </div>
+        <img src="screenshot_18.png" alt="Решение задания 1.9.2" class="task-image">
+    </div>
+</div>
+<!-- Модуль 2.1 Знакомство с сервером -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.1 Знакомство с сервером</div>
+    
+    <div class="task">
+        <div class="task-question">2.1.1 Использование удаленного сервера</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Для каких задач подходит удаленный сервер?</p>
+            <p><strong>Ответ:</strong> Хранение больших объемов данных; Выполнение сложных вычислений; Хранение конфиденциальных данных; Хранение общедоступных данных</p>
+            <p><strong>Вывод:</strong> Удаленный сервер универсален для хранения и обработки любых данных.</p>
+        </div>
+        <img src="screenshot_1.png" alt="Решение задания 2.1.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.1.2 Безопасность SSH-ключей</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какой ключ безопасно пересылать?</p>
+            <p><strong>Ответ:</strong> id_rsa.pub</p>
+            <p><strong>Вывод:</strong> Публичный ключ безопасен для передачи.</p>
+        </div>
+        <img src="screenshot_2.png" alt="Решение задания 2.1.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 2.2 Обмен файлами -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.2 Обмен файлами</div>
+    
+    <div class="task">
+        <div class="task-question">2.2.1 Рекурсивное копирование</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Как скопировать папку рекурсивно?</p>
+            <p><strong>Ответ:</strong> scp -r stepic username@server:~/</p>
+            <p><strong>Вывод:</strong> Флаг -r обеспечивает рекурсивное копирование.</p>
+        </div>
+        <img src="screenshot_3.png" alt="Решение задания 2.2.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.2.2 Установка пакетов через apt-get</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что нужно сделать при проблемах с установкой пакета?</p>
+            <p><strong>Ответ:</strong> sudo apt-get update; Проверка интернет соединения</p>
+            <p><strong>Вывод:</strong> Обновление репозиториев и интернет обязательны для установки.</p>
+        </div>
+        <img src="screenshot_4.png" alt="Решение задания 2.2.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 2.3 Запуск приложений -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.3 Запуск приложений</div>
+    
+    <div class="task">
+        <div class="task-question">2.3.1 Справка о программе</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие способы получения справки о программе верны?</p>
+            <p><strong>Ответ:</strong> man program; program --help; help program</p>
+            <p><strong>Вывод:</strong> Основные способы - man и --help.</p>
+        </div>
+        <img src="screenshot_5.png" alt="Решение задания 2.3.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.3.2 Форматы входных данных FastQC</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие форматы поддерживает FastQC?</p>
+            <p><strong>Ответ:</strong> fastq; bam; sam</p>
+            <p><strong>Вывод:</strong> FastQC поддерживает bam и sam форматы.</p>
+        </div>
+        <img src="screenshot_6.png" alt="Решение задания 2.3.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 2.4 Контроль запускаемых программ -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.4 Контроль запускаемых программ</div>
+    
+    <div class="task">
+        <div class="task-question">2.4.1 Состояние фоновых процессов</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие программы будут видны в jobs после последовательности команд?</p>
+            <p><strong>Ответ:</strong> Только program2, program3</p>
+            <p><strong>Вывод:</strong> program1 завершен, program2 приостановлен, program3 активен.</p>
+        </div>
+        <img src="screenshot_7.png" alt="Решение задания 2.4.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.4.2 Идентификаторы процессов</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Одинаковы ли ID процессов в jobs, top и ps?</p>
+            <p><strong>Ответ:</strong> У ps и top одинаковые.</p>
+            <p><strong>Вывод:</strong> Каждая утилита использует свой тип идентификатора, кроме ps и top.</p>
+        </div>
+        <img src="screenshot_8.png" alt="Решение задания 2.4.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 2.5 Многопоточные приложения -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.5 Многопоточные приложения</div>
+    
+    <div class="task">
+        <div class="task-question">2.5.1 Потребление CPU остановленным процессом</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Сколько % CPU использует приложение после Ctrl+Z?</p>
+            <p><strong>Ответ:</strong> 0% CPU</p>
+            <p><strong>Вывод:</strong> Остановленные процессы не потребляют процессорное время.</p>
+        </div>
+        <img src="screenshot_9.png" alt="Решение задания 2.5.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.5.2 Потребление памяти остановленным процессом</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Сколько памяти занимает приложение после Ctrl+Z?</p>
+            <p><strong>Ответ:</strong> Столько, сколько оно потребляло в момент остановки</p>
+            <p><strong>Вывод:</strong> Остановка не освобождает выделенную память.</p>
+        </div>
+        <img src="screenshot_10.png" alt="Решение задания 2.5.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 2.6 Менеджер терминала tmux -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">2.6 Менеджер терминала tmux</div>
+    
+    <div class="task">
+        <div class="task-question">2.6.1 Поведение приостановленного процесса</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что произойдет при вызове fg в другой вкладке?</p>
+            <p><strong>Ответ:</strong> Терминал сообщит, что нет процесса для запуска в fg</p>
+            <p><strong>Вывод:</strong> У каждой вкладки терминала свой набор процессов.</p>
+        </div>
+        <img src="screenshot_11.png" alt="Решение задания 2.6.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">2.6.2 Завершение tmux</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что произойдет при exit в последней вкладке tmux?</p>
+            <p><strong>Ответ:</strong> tmux завершит работу</p>
+            <p><strong>Вывод:</strong> Закрытие последней вкладки завершает tmux-сессию.</p>
+        </div>
+        <img src="screenshot_12.png" alt="Решение задания 2.6.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.1 Текстовый редактор vim -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.1 Текстовый редактор vim</div>
+    
+    <div class="task">
+        <div class="task-question">3.1.1 Выход из Vim</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие клавиши нажать для выхода?</p>
+            <p><strong>Ответ:</strong> " : ", затем "q", затем "Enter"</p>
+            <p><strong>Вывод:</strong> Стандартная последовательность для выхода из Vim.</p>
+        </div>
+        <img src="screenshot_1.png" alt="Решение задания 3.1.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.1.2 Визуальный режим Vim</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие утверждения о Visual mode верны?</p>
+            <p><strong>Ответ:</strong> В режиме выделения можно использовать команды перемещения; Режим выделения открывается из нормального режима по нажатию "v"; Внизу редактора горит надпись -- VISUAL --</p>
+            <p><strong>Вывод:</strong> Visual mode активируется клавишей v, поддерживает навигацию и имеет индикатор.</p>
+        </div>
+        <img src="screenshot_2.png" alt="Решение задания 3.1.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.2 Скрипты на bash: основы -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.2 Скрипты на bash: основы</div>
+    
+    <div class="task">
+        <div class="task-question">3.2.1 История команд</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие команды будут доступны в истории при вложенных shell-сессиях?</p>
+            <p><strong>Ответ:</strong> Только из набора С</p>
+            <p><strong>Вывод:</strong> История команд сохраняется только для текущей оболочки.</p>
+        </div>
+        <img src="screenshot_3.png" alt="Решение задания 3.2.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.2.2 Создание файла bash-скриптом</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Где окажется file1.txt после выполнения скрипта?</p>
+            <p><strong>Ответ:</strong> /home/bi/file1.txt</p>
+            <p><strong>Вывод:</strong> Файл создается по указанному в скрипте пути.</p>
+        </div>
+        <img src="screenshot_4.png" alt="Решение задания 3.2.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.3 Скрипты на bash: ветвления и циклы -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.3 Скрипты на bash: ветвления и циклы</div>
+    
+    <div class="task">
+        <div class="task-question">3.3.1 Условные конструкции</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие строки выведет скрипт при var=3 и var=5?</p>
+            <p><strong>Ответ:</strong> Сначала four, потом four</p>
+            <p><strong>Вывод:</strong> Оба значения не соответствуют условиям elif.</p>
+        </div>
+        <img src="screenshot_5.png" alt="Решение задания 3.3.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.3.2 Цикл for с continue</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Сколько раз выведется "start" и "finish"?</p>
+            <p><strong>Ответ:</strong> 5 раз "start" и 4 раза "finish"</p>
+        </div>
+        <img src="screenshot_6.png" alt="Решение задания 3.3.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.4 Скрипты на bash: разное -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.4 Скрипты на bash: разное</div>
+    
+    <div class="task">
+        <div class="task-question">3.4.1 Вывод команды echo после cd</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что выведет echo "pwd" после cd /home/bi/?</p>
+            <p><strong>Ответ:</strong> /home/bi</p>
+            <p><strong>Вывод:</strong> Обратные кавычки выполняют pwd в текущей директории.</p>
+        </div>
+        <img src="screenshot_7.png" alt="Решение задания 3.4.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.4.2 Проверка кода возврата</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Как корректно проверить код возврата программы, которая выводит данные?</p>
+            <p><strong>Ответ:</strong> if `program > some_file.txt`; Сначала запустить program, затем if [[$?-eq0]]</p>
+            <p><strong>Вывод:</strong> $? хранит код возврата последней команды.</p>
+        </div>
+        <img src="screenshot_8.png" alt="Решение задания 3.4.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.5 Продвинутый поиск и редактирование -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.5 Продвинутый поиск и редактирование</div>
+    
+    <div class="task">
+        <div class="task-question">3.5.1 Поиск файлов с find</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие файлы найдет -iname "star", но не найдет -name "star"?</p>
+            <p><strong>Ответ:</strong> Star_Wars.avi; STARS.txt</p>
+            <p><strong>Вывод:</strong> -iname игнорирует регистр, -name учитывает.</p>
+        </div>
+        <img src="screenshot_9.png" alt="Решение задания 3.5.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.5.2 Поведение sed без опции -n</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Что выведет sed "/[a-z]*/p" text.txt без -n?</p>
+            <p><strong>Ответ:</strong> Каждая строчка будет выведена два раза</p>
+            <p><strong>Вывод:</strong> Без -n sed дублирует строки, соответствующие шаблону.</p>
+        </div>
+        <img src="screenshot_10.png" alt="Решение задания 3.5.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.6 Строим графики в gnuplot -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.6 Строим графики в gnuplot</div>
+    
+    <div class="task">
+        <div class="task-question">3.6.1 Опция gnuplot для сохранения графиков</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какая опция предотвращает закрытие графиков при выходе из gnuplot?</p>
+            <p><strong>Ответ:</strong> -p, --persist</p>
+            <p><strong>Вывод:</strong> Опция --persist оставляет графики открытыми.</p>
+        </div>
+        <img src="screenshot_11.png" alt="Решение задания 3.6.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.6.2 Название и количество точек графика</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какое название и сколько точек будет у графика plot 'data.csv' using 1:2?</p>
+            <p><strong>Ответ:</strong> Название -- первое значение из второго столбца, нарисовано 9 точек</p>
+            <p><strong>Вывод:</strong> autotitle columnhead использует первую строку данных как название, не пропуская точки.</p>
+        </div>
+        <img src="screenshot_12.png" alt="Решение задания 3.6.2" class="task-image">
+    </div>
+</div>
+
+<!-- Модуль 3.7 Разное -->
+<div class="module" style="width: 100%; max-width: 800px; margin: 0 auto;">
+    <div class="module-header">3.7 Разное</div>
+    
+    <div class="task">
+        <div class="task-question">3.7.1 Установка прав файла</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие команды правильно установят права rwxrw-r--?</p>
+            <p><strong>Ответ:</strong> chmod 764 file.txt; chmod a+wx file.txt; chmod o-wx file.txt; chmod g-x file.txt; chmod ug+w file.txt; chmod u+x file.txt</p>
+            <p><strong>Вывод:</strong> Эти команды дают владельцу rwx, группе rw-, остальным r--.</p>
+        </div>
+        <img src="screenshot_13.png" alt="Решение задания 3.7.1" class="task-image">
+    </div>
+    
+    <div class="task">
+        <div class="task-question">3.7.2 Характеристики файла с wc</div>
+        <div class="task-answer">
+            <p><strong>Вопрос:</strong> Какие параметры файла считает wc?</p>
+            <p><strong>Ответ:</strong> Количество строк; Количество слов; Длину самой длинной строки; Размер файла в байтах</p>
+            <p><strong>Вывод:</strong> wc вычисляет строки, слова и символы, но не размер или длину строк.</p>
+        </div>
+        <img src="screenshot_14.png" alt="Решение задания 3.7.2" class="task-image">
+    </div>
+</div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Смольняков Данил. Все права защищены.</p>
+            <p>Курс "Введение в Linux" на Stepik</p>
+        </div>
+    </footer>
+</body>
+</html>
