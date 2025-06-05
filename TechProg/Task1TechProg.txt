@@ -1,0 +1,223 @@
+#include <iostream>
+#include <string>
+
+class Product
+{
+public:
+    Product(const std::string& name, int count, double weight, const std::string& unit) : name(name), count(count), weight(weight), unit(unit), next(nullptr) {
+    }
+
+    const std::string& getName() const { return name; }
+    int getCount() const { return count; }
+    double getWeight() const { return weight; }
+    const std::string& getUnit() const { return unit; }
+
+    void setCount(int newCount) { count = newCount; }
+
+    Product* getNext() const { return next; }
+    void setNext(Product* newNext) { next = newNext; }
+
+private:
+    std::string name;
+    int count;
+    double weight;
+    std::string unit;
+    Product* next;
+};
+
+class ProductManager
+{
+public:
+    ProductManager() : head(nullptr) {}
+
+    ~ProductManager()
+    {
+        while (head)
+        {
+            Product* temp = head;
+            head = head->getNext();
+            delete temp;
+        }
+    }
+
+    void addNewProduct(const std::string& name, int count, double weight, const std::string& unit)
+    {
+        Product* newProduct = new Product(name, count, weight, unit);
+        if (!head)
+        {
+            head = newProduct;
+        }
+        else
+        {
+            Product* current = head;
+            while (current->getNext())
+            {
+                current = current->getNext();
+            }
+            current->setNext(newProduct);
+        }
+    }
+
+    Product* getProductById(int id)
+    {
+        Product* current = head;
+        int currentId = 1;
+        while (current && currentId < id)
+        {
+            current = current->getNext();
+            currentId++;
+        }
+
+        if (current)
+        {
+            std::cout << currentId << " " << current->getName() << " " << current->getCount() << " " << current->getWeight() << " " << current->getUnit() << std::endl;
+        }
+        return current;
+    }
+
+    void addCount(int id, int num)
+    {
+        Product* product = getProductById(id);
+        if (product)
+            product->setCount(product->getCount() + num);
+    }
+
+    void substractCount(int id, int num)
+    {
+        Product* product = getProductById(id);
+        if (product)
+            product->setCount(product->getCount() - num);
+    }
+
+    void getAllProducts()
+    {
+        Product* current = head;
+        int currentId = 1;
+        while (current)
+        {
+            std::cout << currentId << " " << current->getName() << " " << current->getCount() << " " << current->getWeight() << " " << current->getUnit() << std::endl;
+            current = current->getNext();
+            currentId++;
+        }
+    }
+
+    void removeProductById(int id)
+    {
+        if (id < 1 || !head)
+            return;
+
+        Product* current = head;
+        Product* previous = nullptr;
+        int currentId = 1;
+
+        while (current && currentId < id)
+        {
+            previous = current;
+            current = current->getNext();
+            currentId++;
+        }
+
+        if (!current)
+            return;
+
+        if (!previous)
+        {
+            head = current->getNext();
+        }
+        else
+        {
+            previous->setNext(current->getNext());
+        }
+
+        delete current;
+    }
+
+    void AddElementBeforeId(int id, const std::string& name, int count, double weight, const std::string& unit)
+    {
+        if (id < 1)
+            return;
+
+        Product* newProduct = new Product(name, count, weight, unit);
+
+        if (id == 1)
+        {
+            newProduct->setNext(head);
+            head = newProduct;
+            return;
+        }
+
+        Product* current = head;
+        Product* previous = nullptr;
+        int currentId = 1;
+
+        while (current && currentId < id)
+        {
+            previous = current;
+            current = current->getNext();
+            currentId++;
+        }
+
+        if (!current && currentId != id)
+            return;
+
+        previous->setNext(newProduct);
+        newProduct->setNext(current);
+    }
+
+    void AddElementAfterId(int id, const std::string& name, int count, double weight, const std::string& unit)
+    {
+        if (id < 1)
+            return;
+
+        Product* newProduct = new Product(name, count, weight, unit);
+
+        Product* current = head;
+        int currentId = 1;
+
+        while (current && currentId < id)
+        {
+            current = current->getNext();
+            currentId++;
+        }
+
+        if (!current)
+            return;
+
+        newProduct->setNext(current->getNext());
+        current->setNext(newProduct);
+    }
+
+private:
+    Product* head;
+};
+
+int main()
+{
+    ProductManager manager;
+    manager.addNewProduct("Sugar", 50, 1000.f, "gr");
+    manager.addNewProduct("Bread", 100, 400.f, "gr");
+    manager.addNewProduct("Milk", 80, 900.f, "ml");
+    manager.addNewProduct("Flour", 30, 1000.f, "gr");
+    manager.addNewProduct("Eggs", 50, 500.f, "gr");
+
+    manager.getAllProducts();
+    std::cout << std::endl;
+
+    manager.addCount(2, 50);
+    manager.substractCount(2, 25);
+    manager.getProductById(2);
+    std::cout << std::endl;
+
+    manager.removeProductById(1);
+    manager.getAllProducts();
+    std::cout << std::endl;
+
+    manager.AddElementBeforeId(3, "Cheese", 100, 200.f, "gr");
+    manager.getAllProducts();
+    std::cout << std::endl;
+
+    manager.AddElementAfterId(2, "Sausage", 30, 500.f, "gr");
+    manager.getAllProducts();
+
+    return 0;
+}

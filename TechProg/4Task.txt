@@ -1,0 +1,180 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+class Book {
+public:
+    string title;
+    string author;
+    int year;
+    string genre;
+    double price;
+};
+
+vector<Book> books;
+
+void addBook() {
+    Book newBook;
+    cout << "enter title: ";
+    cin.ignore();
+    getline(cin, newBook.title);
+    cout << "enter author: ";
+    getline(cin, newBook.author);
+    cout << "enter year: ";
+    cin >> newBook.year;
+    cout << "enter genre: ";
+    cin.ignore();
+    getline(cin, newBook.genre);
+    cout << "enter price: ";
+    cin >> newBook.price;
+    
+    books.push_back(newBook);
+    cout << "book added!" << endl;
+}
+
+void saveToFile(const string& filename) {
+    ofstream file(filename);
+    if (!file.is_open()) {
+        cerr << "error opening file for writing" << endl;
+        return;
+    }
+    
+    for (const auto& book : books) {
+        file << book.title << " " 
+             << book.author << " " 
+             << book.year << " " 
+             << book.genre << " " 
+             << book.price << endl;
+    }
+    
+    file.close();
+    cout << "data saved to file " << filename << endl;
+}
+
+void loadFromFile(const string& filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cerr << "error opening file for reading" << endl;
+        return;
+    }
+    
+    books.clear();
+    string line;
+    
+    while (getline(file, line)) {
+        istringstream iss(line);
+        Book book;
+        string temp;
+        
+        getline(iss, book.title, '|');
+        getline(iss, book.author, '|');
+        iss >> book.year;
+        iss.ignore();
+        getline(iss, book.genre, '|');
+        iss >> book.price;
+        
+        books.push_back(book);
+    }
+    
+    file.close();
+    cout << "data loaded from file " << filename << endl;
+}
+
+void updateBook(int index) {
+    if (index < 0 || index >= books.size()) {
+        cout << "invalid index" << endl;
+        return;
+    }
+    
+    cout << "enter new book data:" << endl;
+    cout << "title: ";
+    cin.ignore();
+    getline(cin, books[index].title);
+    cout << "author: ";
+    getline(cin, books[index].author);
+    cout << "year: ";
+    cin >> books[index].year;
+    cout << "genre: ";
+    cin.ignore();
+    getline(cin, books[index].genre);
+    cout << "price: ";
+    cin >> books[index].price;
+    
+    cout << "book data updated!" << endl;
+}
+
+void deleteBook(int index) {
+    if (index < 0 || index >= books.size()) {
+        cout << "invalid index" << endl;
+        return;
+    }
+    
+    books.erase(books.begin() + index);
+    cout << "book deleted!" << endl;
+}
+
+void printAllBooks() {
+    cout << "book list:" << endl;
+    for (size_t i = 0; i < books.size(); ++i) {
+        cout << i << ": " << books[i].title << " (" 
+             << books[i].author << "), " << books[i].year << ", "
+             << books[i].genre << ", price: " << books[i].price << endl;
+    }
+}
+
+int main() {
+    string filename = "books.txt";
+    int choice;
+    
+    while (true) {
+        cout << "\nmenu:\n";
+        cout << "1. add book\n";
+        cout << "2. save to file\n";
+        cout << "3. load from file\n";
+        cout << "4. update book\n";
+        cout << "5. delete book\n";
+        cout << "6. show all books\n";
+        cout << "7. exit\n";
+        cout << "select option: ";
+        cin >> choice;
+        
+        switch (choice) {
+            case 1:
+                addBook();
+                break;
+            case 2:
+                saveToFile(filename);
+                break;
+            case 3:
+                loadFromFile(filename);
+                break;
+            case 4: {
+                int index;
+                cout << "enter book index: ";
+                cin >> index;
+                updateBook(index);
+                break;
+            }
+            case 5: {
+                int index;
+                cout << "enter book index: ";
+                cin >> index;
+                deleteBook(index);
+                break;
+            }
+            case 6:
+                printAllBooks();
+                break;
+            case 7:
+                return 0;
+            default:
+                cout << "invalid choice" << endl;
+        }
+    }
+    
+    return 0;
+}
